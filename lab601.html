@@ -67,7 +67,10 @@
       <script>
          $(document).ready(function(){
             $("#buttontoreveal").click(function(){
-               $("#buttontoreveal").html("I'm an individual who definitely goes outside the norm with what I want as a pet.  While other people would say dogs or cats; I say snakes.  Snakes have been a passion of mine for so long and I absoluely love them.  So when I found out you can legally own certain snakes I was ecstatic.  So I made the plan to do my research and own one.");
+               $("#div_button").html("I'm an individual who definitely goes outside the norm with what I want as a pet.  While other people would say dogs or cats; I say snakes.  Snakes have been a passion of mine for so long and I absoluely love them.  So when I found out you can legally own certain snakes I was ecstatic.  So I made the plan to do my research and own one.");
+            });
+            $("#ophidiaphobia").click(function(){
+               $("#snakephoto").fadeToggle();
             });
          });
       </script>
@@ -75,9 +78,9 @@
    <body>
       <div id="container">
          <h1>Owning a Snake</h1>
-         <button id="buttontoreveal"><p>
+         <div id="div_button"><button id="buttontoreveal"><p>
             click to reveal story
-         </p></button>
+         </p></button></div>
          <h3>Choosing the Snake</h3>
          <p>
             Snakes are very particular when it comes to care.  there isn't really an easy to
@@ -101,6 +104,7 @@
             <p class="caption">photo by Animal World and Snake Farm Zoo</p>
             <a href="https://reptifiles.com/corn-snake-care-guide/">Corn Snake care guide</a>
            <p class="caption">background by author</p>
+            <button id="ophidiaphobia">ophidiaphobia warning.</button>
          </div>
          <div id="snakeTable">
             <h3>other species and how difficult they are to care for.</h3>
