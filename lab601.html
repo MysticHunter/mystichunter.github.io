@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Jadyn's Lab 5 Web Page</title>
+      <title>Jadyn's Lab 6 Web Page</title>
       <style>
          body {
            width: 100%;
@@ -63,16 +63,21 @@
           background-color: (205, 255, 205);
         }
       </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function(){
+            $("#buttontoreveal").click(function(){
+               $("#buttontoreveal").html("I'm an individual who definitely goes outside the norm with what I want as a pet.  While other people would say dogs or cats; I say snakes.  Snakes have been a passion of mine for so long and I absoluely love them.  So when I found out you can legally own certain snakes I was ecstatic.  So I made the plan to do my research and own one.");
+            });
+         });
+      </script>
    </head>
    <body>
       <div id="container">
          <h1>Owning a Snake</h1>
-         <p>
-            I'm an individual who definitely goes outside the norm with what I want as a pet.
-            While other people would say dogs or cats; I say snakes.  Snakes have been a passion
-            of mine for so long and I absoluely love them.  So when I found out you can legally
-            own certain snakes I was ecstatic.  So I made the plan to do my research and own one.
-         </p>
+         <button id="buttontoreveal"><p>
+            click to reveal story
+         </p></button>
          <h3>Choosing the Snake</h3>
          <p>
             Snakes are very particular when it comes to care.  there isn't really an easy to
