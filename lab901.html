@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Lab 8 - Denver Neighborhood Data</title>
+	<title>Lab 9 - Denver Neighborhood Data</title>
 	
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -70,7 +70,7 @@
 
     // define a fucntion to style my chloropeth map
     function style1 (feature) {
-      d = feature.properties.PCT_POVERTY;
+      d = feature.properties.PCT_TWOORMORE_RACES;
       answer = d > 30 ? '##fcfbfd':
         d > 20 ? '#efedf5':
         d > 15 ? '#dadaeb' :
@@ -94,7 +94,7 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data){
 			//convert geojson file into layer
 			acsDenver2021Layer = L.geoJSON(data, {style:style1, onEachFeature: function(feature, layer) {
-					layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
+					layer.bindPopup("Percent of groups with two or more races: " + feature.properties.PCT_TWOORMORE_RACES + "%");
 				}
 				}).addTo(map);
 
