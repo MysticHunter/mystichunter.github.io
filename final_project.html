@@ -18,35 +18,27 @@
     <div id="map"></div>
     
     <script>
-      var map = L.map('map').setView([41.394316, 2.175273], 13);
+      var map = L.map('map').setView([39.094897, -108.731159], 14);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
       
-      var marker = L.marker([41.40357353969484, 2.1743665256463216]).addTo(map);
-      
-      var circle = L.circle([41.400133007018255, 2.181212265506365], {
-        color:'red',
-        fillColor:'#f03',
-        fillOpacity: 0.5,
-        radius:50
-      }).addTo(map);
+      var marker = L.marker([39.100842, -108.734403]).addTo(map);
       
       var polygon = L.polygon([
-        [41.376509, 2.177819],
-        [41.385593, 2.170311],
-        [41.388041, 2.172799],
-        [41.381406, 2.181765]
+        [39.100542, -108.734198],
+        [39.103023, -108.727095],
+        [39.105521, -108.726129],
+        [39.103856, -108.73231]
       ]).addTo(map);
       
-      marker.bindPopup("<b>Las Sagrada Familia</b><br>the largest church still under construction").openPopup();
-      circle.bindPopup("<b>La monumental</b><br>The last bullfight arena in operation in Catalonia");
-      polygon.bindPopup("<b>Gothic Quarter</b><br>The gothic quarter of Barcelona is made from only cool gothic era buildings.");
+      marker.bindPopup("<b>Saddlehorn Visitor Center</b><br>I saw a golden eagle here.  It was being mobbed by a common raven").openPopup();
+      polygon.bindPopup("<b>Canyon Rim trail</b><br>the class hiked this trail area and saw a number of cool birds.");
       
       var popup = L.popup()
-        .setLatLng([41.401742, 2.177498])
-        .setContent("Barcelona has some of my favorite things to see.")
+        .setLatLng([39.094897, -108.731159])
+        .setContent("In a field Ornithology class I saw a lot of cool birds.  Specifically in the Colorado National Monument")
         .openOn(map);
       var popup = L.popup();
 
