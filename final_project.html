@@ -50,6 +50,12 @@
       }
       
       map.on('click', onMapClick);
+
+      $.getJSON('./national_monument_jadyn.geojson', function(data){
+			//convert geojson file into layer
+			acsDenver2021Layer = L.geoJSON(data, {style:style1, onEachFeature: function(feature, layer) {
+					layer.bindPopup("Percent of groups with two or more races: " + feature.properties.PCT_TWOORMORE_RACES + "%");
+      
     </script>
   </body>
 </html>
