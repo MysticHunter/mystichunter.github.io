@@ -84,7 +84,7 @@
          				layer.bindPopup("Acreage of the Colorado National Monument: " + feature.properties.Shape_Area + " Acre's");
          			}
          			}).addTo(map);
-               layerControl.addOverlay(nationalMonumentJadyn, "National Monument").bringToBack();
+               layerControl.addOverlay(nationalMonumentJadyn, "National Monument");
          	});
          L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
              maxZoom: 19,
