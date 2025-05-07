@@ -4,38 +4,46 @@
       <base target="_top" />
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
       <title>Final Project</title>
+      
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-      <!--library-->
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
       <style>
          html,
          body {
-         height: 100%;
-         margin: 0;
+            height: 100%;
+            margin: 0;
          }
          #map {
-         width: 100%;
-         height: 70%;
+            width: 100%;
+            height: 70%;
          }
          h1 {
-         color: #3293a8;
-         font-family: "Garamond", serif;
-         font-size: 20px;
+            color: #3293a8;
+            font-family: "Garamond", serif;
+            font-size: 20px;
          }
          p {
-         font: serif 10px;
-         color: #3293a8;
+            font: serif 10px;
+            color: #3293a8;
          }
          #header {
-         width: 100%;
-         margin: auto;
-         align: center;
+            width: 100%;
+            margin: auto;
+            align: center;
          }
          a {
-         text-decoration: none;
-         color: inherit;
+            text-decoration: none;
+            color: inherit;
+         }
+         #container {
+           width: 90%;
+           text-align: left;
+           margin: 0px auto;
+           background-color: white;
          }
       </style>
       <script>
@@ -81,7 +89,7 @@
          $.getJSON('./national_monument_jadyn.geojson', function(data){
          		//convert geojson file into layer
          		nationalMonumentJadyn = L.geoJSON(data, {style:style1, onEachFeature: function(feature, layer) {
-         				layer.bindPopup("Acreage of the Colorado National Monument: " + feature.properties.Shape_Area + " Acre's");
+         				layer.bindPopup("Acreage of the Colorado National Monument: 82,766,772.005 Acre's");
          			}
          			}).addTo(map);
                layerControl.addOverlay(nationalMonumentJadyn, "National Monument");
@@ -103,7 +111,7 @@
          marker.bindPopup("<b>Saddlehorn Visitor Center</b><br>I saw a golden eagle here.  It was being mobbed by a common raven").openPopup();
          polygon.bindPopup("<b>Canyon Rim trail</b><br>the class hiked this trail area and saw a number of cool birds.");
          
-         var popup = L.popup().setLatLng([39.094897, -108.731159]).setContent("In a field Ornithology class I saw a lot of cool birds.  Specifically in the Colorado National Monument").openOn(map);
+         var popup = L.popup().setLatLng([39.094897, -108.731159]).setContent("use the map to find out what birds I saw in the National Monument!").openOn(map);
          var popup = L.popup();
          
          function onMapClick(e) {
@@ -113,10 +121,26 @@
                  .openOn(map);
          }
          map.on("click", onMapClick);
+
+         $("#buttontoreveal").click(function(){
+               $("#div_button").html("Golden Eagle, Common Raven, White-Throated Swift, Rock Pigeon, Mountain Blue Bird, ");
+            });
          });
       </script>
    </head>
    <body>
+      <div id="header">
+	      <p>Data from <a href="https://opendata.mesacounty.us/datasets/63be863004b94be5b279143789a84eee/explore?location=39.065856%2C-108.656517%2C12.23">Mesa County Open Data</a></p>
+      </div>
       <div id="map"></div>
+      <div id="container">
+         <p>
+            I just finished a Field Ornithology class this semester and probably my favorite locations to see was the Colorado National Monument.
+            I saw many different kinds of birds on the trip in total though!
+         </p>
+         <div id="div_button"><button id="buttontoreveal"><p>
+               click to reveal my favorite birds on the trip
+            </p></button></div>
+      </div>
    </body>
 </html>
